@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using lymcAssignment.Models;
+using System.Collections.Generic;
 
 namespace lymcAssignment.Controllers
 {
@@ -149,15 +150,28 @@ namespace lymcAssignment.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
+
             if (ModelState.IsValid)
             {
+
                 var user = new ApplicationUser {
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
                     UserName = model.Username,
-                    Email = model.Email
+                    Email = model.Email,
+                    Street = model.Street,
+                    City = model.City,
+                    Province = model.Province,
+                    PostalCode = model.PostalCode,
+                    Country  = model.Country,
+                    PhoneNumber = model.PhoneNumber,
+                    SailingExperience = model.SailingExperience
                 };
+
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
