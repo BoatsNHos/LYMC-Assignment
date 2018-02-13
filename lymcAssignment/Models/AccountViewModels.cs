@@ -64,10 +64,22 @@ namespace lymcAssignment.Models
 
     public class RegisterViewModel
     {
+        [Key]
+        public string Id { get; set; }
+
+        [Required]
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
+
         [Required]
         [Display(Name = "Username")]
         public string Username { get; set; }
 
+        [Required]
         [DataType(DataType.EmailAddress)]
         [Display(Name = "Email")]
         public string Email { get; set; }
@@ -82,6 +94,34 @@ namespace lymcAssignment.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        public string Street { get; set; }
+
+        [Required]
+        public string City { get; set; }
+
+        [Required]
+        public string Province { get; set; }
+
+        [Required]
+        [DataType(DataType.PostalCode)]
+        [RegularExpression(@"[ABCEGHJKLMNPRSTVXY][0-9][ABCEGHJKLMNPRSTVWXYZ] [0-9][ABCEGHJKLMNPRSTVWXYZ][0-9]", ErrorMessage = "Inavlid postal code format.")]
+        [Display(Name = "Postal Code")]
+        public string PostalCode { get; set; }
+
+        [Required]
+        public string Country { get; set; }
+
+        [Required]
+        [DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Inavlid mobile format.")]
+        [Display(Name = "Mobile Number")]
+        public string PhoneNumber { get; set; }
+
+        [Required]
+        [Display(Name = "Sailing Experience")]
+        public string SailingExperience { get; set; }
     }
 
     public class ResetPasswordViewModel
