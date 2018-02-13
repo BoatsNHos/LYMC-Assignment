@@ -1,0 +1,5 @@
+﻿Enable-Migrations -ContextTypeName ApplicationDbContext -MigrationsDirectory Migrations\Places
+
+Add-Migration -ConfigurationTypeName lymcAssignment.Migrations.Configuration "InitialCreate"
+
+Update-Database -ConfigurationTypeName lymcAssignment.Migrations.Configuration
