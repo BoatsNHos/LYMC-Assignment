@@ -22,6 +22,6 @@ namespace LmycDataLib.Models.BoatInventory
         public DateTime CreationDate { get; set; }
 
         public string ApplicationUserId { get; set; }
-        public virtual ApplicationUser CreatedBy { get; set; }
+        public string CreatedBy { get; set; }
     }
 }
