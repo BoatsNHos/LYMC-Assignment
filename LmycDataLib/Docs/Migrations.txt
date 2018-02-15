@@ -1,0 +1,5 @@
+﻿Enable-Migrations -ContextTypeName ApplicationDbContext -MigrationsDirectory Migrations\Boats
+
+add-migration -ConfigurationTypeName LmycDataLib.Migrations.Boats.Configuration
+
+update-database -ConfigurationTypeName LmycDataLib.Migrations.Boats.Configuration
