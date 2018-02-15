@@ -14,6 +14,10 @@ namespace lymcAssignment.Migrations.Boats
 
         protected override void Seed(LmycDataLib.Models.ApplicationDbContext context)
         {
+            context.Users.AddOrUpdate(
+                u => u.Id, LmycDataLib.Data.DummyData.getUsers().ToArray()
+                );
+
             context.Boats.AddOrUpdate(
                 b => b.BoatId, LmycDataLib.Data.DummyData.getBoats().ToArray()
                 );

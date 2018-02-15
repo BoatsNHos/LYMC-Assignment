@@ -195,6 +195,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802152015134_Initial Create.cs" />
+    <Compile Include="Migrations\201802152015134_Initial Create.Designer.cs">
+      <DependentUpon>201802152015134_Initial Create.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Boats\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -203,9 +207,9 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\aspnet-lymcAssignment-20180208101552.mdf" />
-    <Content Include="App_Data\aspnet-lymcAssignment-20180208101552_log.ldf">
-      <DependentUpon>aspnet-lymcAssignment-20180208101552.mdf</DependentUpon>
+    <Content Include="App_Data\Lmyc.mdf" />
+    <Content Include="App_Data\Lmyc_log.ldf">
+      <DependentUpon>Lmyc.mdf</DependentUpon>
     </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -283,6 +287,11 @@
       <Project>{2ec362e2-a3af-47f9-95b2-be965744197e}</Project>
       <Name>LmycDataLib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201802152015134_Initial Create.resx">
+      <DependentUpon>201802152015134_Initial Create.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
