@@ -2,6 +2,8 @@
 using Owin;
 
 [assembly: OwinStartupAttribute(typeof(lymcAssignment.Startup))]
+//[assembly: OwinStartupAttribute("lymcAssignmentConfig", typeof(lymcAssignment.Startup))]
+
 namespace lymcAssignment
 {
     public partial class Startup
