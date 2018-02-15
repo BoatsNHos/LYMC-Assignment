@@ -1,0 +1,6 @@
+﻿enable-migrations -ContextProjectName LmycDataLib -StartUpProjectName LmycDataLib -ContextTypeName ApplicationDbContext -ProjectName lymcAssignment
+
+add-migration -ConfigurationTypeName lymcAssignment.Migrations.Boats.Configuration
+
+update-database -ConfigurationTypeName lymcAssignment.Migrations.Boats.Configuration
+
