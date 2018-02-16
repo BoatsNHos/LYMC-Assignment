@@ -9,25 +9,23 @@ namespace LmycDataLib.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
-        public string Id { get; internal set; }
+        public string FirstName { get; set; }
 
-        public string FirstName { get; internal set; }
+        public string LastName { get; set; }
 
-        public string LastName { get; internal set; }
+        public string Street { get; set; }
 
-        public string Street { get; internal set; }
+        public string City { get; set; }
 
-        public string City { get; internal set; }
+        public string Province { get; set; }
 
-        public string Province { get; internal set; }
+        public string Country { get; set; }
 
-        public string Country { get; internal set; }
+        public string PostalCode { get; set; }
 
-        public string PostalCode { get; internal set; }
+        public string PhoneNumber { get; set; }
 
-        public string PhoneNumber { get; internal set; }
-
-        public string SailingExperience { get; internal set; }
+        public string SailingExperience { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
