@@ -1,18 +1,14 @@
 ﻿using LmycDataLib.Models;
-using LmycDataLib.Models.BoatInventory;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace LmycDataLib.Data
 {
     public class DummyData
     {
-        public static ApplicationDbContext context = new ApplicationDbContext();
-
 
         public static List<ApplicationUser> getUsers()
         {
@@ -39,17 +35,6 @@ namespace LmycDataLib.Data
         }
         public static List<Boat> getBoats()
         {
-
-            byte[] ImageToArray(Image img)
-            {
-                byte[] arr;
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                    arr = ms.ToArray();
-                }
-                return arr;
-            }
 
             Boat EggsTaSea = new Boat()
             {

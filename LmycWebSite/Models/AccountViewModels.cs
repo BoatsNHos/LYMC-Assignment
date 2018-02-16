@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace LmycDataLib.Models
+namespace LmycWebSite.Models
 {
     public class ExternalLoginConfirmationViewModel
     {
