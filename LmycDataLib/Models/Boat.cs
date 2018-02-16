@@ -22,7 +22,10 @@ namespace LmycDataLib.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime CreationDate { get; set; }
         [ForeignKey("User")]
+        [ScaffoldColumn(false)]
+        [Display(Name = "Created By")]
         public string CreatedBy { get; set; }
+        [ScaffoldColumn(false)]
         public ApplicationUser User { get; set; }
     }
 }

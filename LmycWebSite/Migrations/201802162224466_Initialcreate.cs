@@ -3,39 +3,10 @@ namespace LmycWebSite.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class Initialcreate : DbMigration
     {
         public override void Up()
         {
-
-            CreateTable(
-    "dbo.AspNetUsers",
-    c => new
-    {
-        Id = c.String(nullable: false, maxLength: 128),
-        FirstName = c.String(),
-        LastName = c.String(),
-        Street = c.String(),
-        City = c.String(),
-        Province = c.String(),
-        Country = c.String(),
-        PostalCode = c.String(),
-        PhoneNumber = c.String(),
-        SailingExperience = c.String(),
-        Email = c.String(maxLength: 256),
-        EmailConfirmed = c.Boolean(nullable: false),
-        PasswordHash = c.String(),
-        SecurityStamp = c.String(),
-        PhoneNumberConfirmed = c.Boolean(nullable: false),
-        TwoFactorEnabled = c.Boolean(nullable: false),
-        LockoutEndDateUtc = c.DateTime(),
-        LockoutEnabled = c.Boolean(nullable: false),
-        AccessFailedCount = c.Int(nullable: false),
-        UserName = c.String(nullable: false, maxLength: 256),
-    })
-    .PrimaryKey(t => t.Id)
-    .Index(t => t.UserName, unique: true, name: "UserNameIndex");
-
             CreateTable(
                 "dbo.Boats",
                 c => new
@@ -53,6 +24,34 @@ namespace LmycWebSite.Migrations
                 .PrimaryKey(t => t.BoatId)
                 .ForeignKey("dbo.AspNetUsers", t => t.CreatedBy)
                 .Index(t => t.CreatedBy);
+            
+            CreateTable(
+                "dbo.AspNetUsers",
+                c => new
+                    {
+                        Id = c.String(nullable: false, maxLength: 128),
+                        FirstName = c.String(),
+                        LastName = c.String(),
+                        Street = c.String(),
+                        City = c.String(),
+                        Province = c.String(),
+                        Country = c.String(),
+                        PostalCode = c.String(),
+                        PhoneNumber = c.String(),
+                        SailingExperience = c.String(),
+                        Email = c.String(maxLength: 256),
+                        EmailConfirmed = c.Boolean(nullable: false),
+                        PasswordHash = c.String(),
+                        SecurityStamp = c.String(),
+                        PhoneNumberConfirmed = c.Boolean(nullable: false),
+                        TwoFactorEnabled = c.Boolean(nullable: false),
+                        LockoutEndDateUtc = c.DateTime(),
+                        LockoutEnabled = c.Boolean(nullable: false),
+                        AccessFailedCount = c.Int(nullable: false),
+                        UserName = c.String(nullable: false, maxLength: 256),
+                    })
+                .PrimaryKey(t => t.Id)
+                .Index(t => t.UserName, unique: true, name: "UserNameIndex");
             
             CreateTable(
                 "dbo.AspNetUserClaims",
