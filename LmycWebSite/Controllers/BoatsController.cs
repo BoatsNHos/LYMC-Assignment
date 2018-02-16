@@ -17,7 +17,8 @@ namespace LmycWebSite.Controllers
         // GET: Boats
         public ActionResult Index()
         {
-            return View(db.Boat.ToList());
+            List<Boat> boatList = db.Boat.ToList();
+            return View(boatList);
         }
 
         // GET: Boats/Details/5
