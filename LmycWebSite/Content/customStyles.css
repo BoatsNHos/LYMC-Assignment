@@ -1,0 +1,21 @@
+﻿body {
+
+}
+
+th {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.boat-img {
+    width: 200px;
+    height: 200px;
+}
+
+.boat-name {
+    font-weight: bold;
+}
+
+td {
+    text-align: center;
+}
