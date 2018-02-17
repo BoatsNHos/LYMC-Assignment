@@ -28,6 +28,7 @@ namespace LmycDataLib.Data
                     SailingExperience = "Beginner",
                     Email = "Email",
                     PhoneNumber = "1234567890",
+                    LockoutEnabled = false
                 }
             };
 
