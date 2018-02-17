@@ -12,14 +12,17 @@ namespace LmycDataLib.Models
     {
         [Key]
         public int BoatId { get; set; }
+        [Display(Name = "Name")]
         public string BoatName { get; set; }
         public string Picture { get; set; }
+        [Display(Name = "Length In Feet")]
         public int LengthInFeet { get; set; }
         public string Make { get; set; }
         public string Year { get; set; }
         public string Record { get; set; }
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Register Date")]
         public DateTime CreationDate { get; set; }
         [ForeignKey("User")]
         [ScaffoldColumn(false)]
