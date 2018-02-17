@@ -27,6 +27,7 @@
                     @if (User.IsInRole("Admin"))
                     {
                         <li>@Html.ActionLink("Boats", "Index", "Boats")</li>
+                        <li>@Html.ActionLink("Users", "Index", "Boats")</li>
                     }
                 </ul>
                 @Html.Partial("_LoginPartial")

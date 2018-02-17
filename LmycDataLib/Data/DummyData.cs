@@ -1,4 +1,5 @@
 ﻿using LmycDataLib.Models;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,11 +13,11 @@ namespace LmycDataLib.Data
 
         public static List<ApplicationUser> getUsers()
         {
+  
             List<ApplicationUser> users = new List<ApplicationUser>()
             {
                 new ApplicationUser
                 {
-                    Id = "Id",
                     UserName = "UserName",
                     FirstName = "First",
                     LastName = "Last",
@@ -28,7 +29,7 @@ namespace LmycDataLib.Data
                     SailingExperience = "Beginner",
                     Email = "Email",
                     PhoneNumber = "1234567890",
-                }
+                },
             };
 
             return users;
@@ -45,9 +46,9 @@ namespace LmycDataLib.Data
                 Year = "1980",
                 Record = "0-20 has never won a race and never will",
                 CreationDate = DateTime.Parse("2008-11-11"),
-                CreatedBy = "Id"
+                CreatedBy = "47435e40-4a95-4d74-83ea-202ab99950cd"
             };
-
+            
             Boat KnottyBuoy = new Boat()
             {
                 BoatName = "Knotty-Buoy",
@@ -57,7 +58,7 @@ namespace LmycDataLib.Data
                 Year = "1990",
                 Record = "10-2 has done well!",
                 CreationDate = DateTime.Parse("1993-08-10"),
-                CreatedBy = "Id"
+                CreatedBy = "47435e40-4a95-4d74-83ea-202ab99950cd"
             };
 
             Boat Flambouyant = new Boat()
@@ -69,10 +70,10 @@ namespace LmycDataLib.Data
                 Year = "2010",
                 Record = "100-0 will win all the races",
                 CreationDate = DateTime.Parse("2016-01-07"),
-                CreatedBy = "Id"
+                CreatedBy = "47435e40-4a95-4d74-83ea-202ab99950cd"
             };
-
-            List<Boat> Boats = new List<Boat>() { EggsTaSea, KnottyBuoy, Flambouyant };
+            
+            List<Boat> Boats = new List<Boat>() { EggsTaSea, KnottyBuoy, Flambouyant};
 
             return Boats;
         }
