@@ -12,6 +12,6 @@
     font-weight: bold;
 }
 
-td {
+td, th {
     text-align: center;
 }
