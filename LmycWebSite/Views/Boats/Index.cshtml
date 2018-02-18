@@ -80,7 +80,7 @@
                     @Html.DisplayFor(modelItem => item.CreationDate)
                 </td>
                 <td>
-                    @creators.Distinct().ElementAt(0).FirstName;
+                    @creators.Distinct().ElementAt(0).FirstName
                 </td>
                     <td>
                         @if (User.IsInRole("admin"))
