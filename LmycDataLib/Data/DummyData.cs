@@ -1,4 +1,5 @@
 ﻿using LmycDataLib.Models;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace LmycDataLib.Data
 
         public static List<ApplicationUser> getUsers()
         {
+  
             List<ApplicationUser> users = new List<ApplicationUser>()
             {
                 new ApplicationUser
@@ -48,7 +50,7 @@ namespace LmycDataLib.Data
                 CreationDate = DateTime.Parse("2008-11-11"),
                 CreatedBy = "Id"
             };
-
+            
             Boat KnottyBuoy = new Boat()
             {
                 BoatName = "Knotty-Buoy",
@@ -72,8 +74,8 @@ namespace LmycDataLib.Data
                 CreationDate = DateTime.Parse("2016-01-07"),
                 CreatedBy = "Id"
             };
-
-            List<Boat> Boats = new List<Boat>() { EggsTaSea, KnottyBuoy, Flambouyant };
+            
+            List<Boat> Boats = new List<Boat>() { EggsTaSea, KnottyBuoy, Flambouyant};
 
             return Boats;
         }

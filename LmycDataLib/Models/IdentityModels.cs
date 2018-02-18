@@ -50,6 +50,7 @@ namespace LmycDataLib.Models
         }
         public DbSet<Boat> Boat { get; set; }
 
+        //public System.Data.Entity.DbSet<LmycDataLib.Models.ApplicationUser> ApplicationUsers { get; set; }
     }
 
 }

@@ -196,9 +196,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201802162224466_Initialcreate.cs" />
-    <Compile Include="Migrations\201802162224466_Initialcreate.Designer.cs">
-      <DependentUpon>201802162224466_Initialcreate.cs</DependentUpon>
+    <Compile Include="Migrations\201802180006371_Initial.cs" />
+    <Compile Include="Migrations\201802180006371_Initial.Designer.cs">
+      <DependentUpon>201802180006371_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -308,6 +308,7 @@
     <Content Include="Views\Boats\Details.cshtml" />
     <Content Include="Views\Boats\Edit.cshtml" />
     <Content Include="Views\Boats\Index.cshtml" />
+    <Content Include="Views\Shared\_UnAuth.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">
@@ -332,8 +333,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201802162224466_Initialcreate.resx">
-      <DependentUpon>201802162224466_Initialcreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201802180006371_Initial.resx">
+      <DependentUpon>201802180006371_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

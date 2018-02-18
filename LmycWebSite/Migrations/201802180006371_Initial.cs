@@ -3,56 +3,38 @@ namespace LmycWebSite.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Initialcreate : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {
-
+          
             CreateTable(
-    "dbo.AspNetUsers",
-    c => new
-    {
-        Id = c.String(nullable: false, maxLength: 128),
-        FirstName = c.String(),
-        LastName = c.String(),
-        Street = c.String(),
-        City = c.String(),
-        Province = c.String(),
-        Country = c.String(),
-        PostalCode = c.String(),
-        PhoneNumber = c.String(),
-        SailingExperience = c.String(),
-        Email = c.String(maxLength: 256),
-        EmailConfirmed = c.Boolean(nullable: false),
-        PasswordHash = c.String(),
-        SecurityStamp = c.String(),
-        PhoneNumberConfirmed = c.Boolean(nullable: false),
-        TwoFactorEnabled = c.Boolean(nullable: false),
-        LockoutEndDateUtc = c.DateTime(),
-        LockoutEnabled = c.Boolean(nullable: false),
-        AccessFailedCount = c.Int(nullable: false),
-        UserName = c.String(nullable: false, maxLength: 256),
-    })
-    .PrimaryKey(t => t.Id)
-    .Index(t => t.UserName, unique: true, name: "UserNameIndex");
-
-            CreateTable(
-                "dbo.Boats",
+                "dbo.AspNetUsers",
                 c => new
                     {
-                        BoatId = c.Int(nullable: false, identity: true),
-                        BoatName = c.String(),
-                        Picture = c.String(),
-                        LengthInFeet = c.Int(nullable: false),
-                        Make = c.String(),
-                        Year = c.String(),
-                        Record = c.String(),
-                        CreationDate = c.DateTime(nullable: false),
-                        CreatedBy = c.String(maxLength: 128),
+                        Id = c.String(nullable: false, maxLength: 128),
+                        FirstName = c.String(),
+                        LastName = c.String(),
+                        Street = c.String(),
+                        City = c.String(),
+                        Province = c.String(),
+                        Country = c.String(),
+                        PostalCode = c.String(),
+                        PhoneNumber = c.String(),
+                        SailingExperience = c.String(),
+                        LockoutEnabled = c.Boolean(),
+                        Email = c.String(maxLength: 256),
+                        EmailConfirmed = c.Boolean(nullable: false),
+                        PasswordHash = c.String(),
+                        SecurityStamp = c.String(),
+                        PhoneNumberConfirmed = c.Boolean(nullable: false),
+                        TwoFactorEnabled = c.Boolean(nullable: false),
+                        LockoutEndDateUtc = c.DateTime(),
+                        AccessFailedCount = c.Int(nullable: false),
+                        UserName = c.String(nullable: false, maxLength: 256),
                     })
-                .PrimaryKey(t => t.BoatId)
-                .ForeignKey("dbo.AspNetUsers", t => t.CreatedBy)
-                .Index(t => t.CreatedBy);
+                .PrimaryKey(t => t.Id)
+                .Index(t => t.UserName, unique: true, name: "UserNameIndex");
             
             CreateTable(
                 "dbo.AspNetUserClaims",
@@ -101,9 +83,28 @@ namespace LmycWebSite.Migrations
                     })
                 .PrimaryKey(t => t.Id)
                 .Index(t => t.Name, unique: true, name: "RoleNameIndex");
-            
+
+            CreateTable(
+              "dbo.Boats",
+              c => new
+              {
+                  BoatId = c.Int(nullable: false, identity: true),
+                  BoatName = c.String(nullable: false),
+                  Picture = c.String(nullable: false),
+                  LengthInFeet = c.Int(nullable: false),
+                  Make = c.String(nullable: false),
+                  Year = c.String(nullable: false),
+                  Record = c.String(nullable: false),
+                  CreationDate = c.DateTime(nullable: false),
+                  CreatedBy = c.String(maxLength: 128),
+              })
+              .PrimaryKey(t => t.BoatId)
+              .ForeignKey("dbo.AspNetUsers", t => t.CreatedBy)
+              .Index(t => t.CreatedBy);
+
+
         }
-        
+
         public override void Down()
         {
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");

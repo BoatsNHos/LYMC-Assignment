@@ -24,7 +24,12 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    @if (User.IsInRole("Admin"))
+                    @if (User.IsInRole("admin"))
+                    {
+                        <li>@Html.ActionLink("Boats", "Index", "Boats")</li>
+                        <li>@Html.ActionLink("Users", "Index", "Boats")</li>
+                    }
+                    @if (User.IsInRole("member"))
                     {
                         <li>@Html.ActionLink("Boats", "Index", "Boats")</li>
                     }
