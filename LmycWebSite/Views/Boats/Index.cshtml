@@ -2,6 +2,8 @@
 
 @{
     ViewBag.Title = "Index";
+    IEnumerable<LmycDataLib.Models.ApplicationUser> users = ViewData["users"] as IEnumerable<LmycDataLib.Models.ApplicationUser>;
+
 }
 
 @if (User.IsInRole("admin") || User.IsInRole("member"))
@@ -51,6 +53,10 @@
 
         @foreach (var item in Model)
         {
+            string userId = item.CreatedBy;
+            var creators = from user in users
+                           where user.Id == userId
+                           select user;
             <tr>
                 <td class="boat-name">
                     @Html.DisplayFor(modelItem => item.BoatName)
@@ -71,11 +77,10 @@
                     @Html.DisplayFor(modelItem => item.Record)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.CreatedBy)
-                </td>
-              
-                <td>
                     @Html.DisplayFor(modelItem => item.CreationDate)
+                </td>
+                <td>
+                    @creators.Distinct().ElementAt(0).FirstName
                 </td>
                     <td>
                         @if (User.IsInRole("admin"))

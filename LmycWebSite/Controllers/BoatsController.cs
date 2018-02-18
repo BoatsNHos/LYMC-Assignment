@@ -18,6 +18,7 @@ namespace LmycWebSite.Controllers
         public ActionResult Index()
         {
             List<Boat> boatList = db.Boat.ToList();
+            ViewData["users"] = db.Users.ToList();
             return View(boatList);
         }
 
