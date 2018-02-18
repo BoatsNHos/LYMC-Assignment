@@ -162,7 +162,8 @@ namespace LmycWebSite.Controllers
                     Country = model.Country,
                     PostalCode = model.PostalCode,
                     PhoneNumber = model.PhoneNumber,
-                    SailingExperience = model.SailingExperience
+                    SailingExperience = model.SailingExperience,
+                    LockoutEnabled = false
                 };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)

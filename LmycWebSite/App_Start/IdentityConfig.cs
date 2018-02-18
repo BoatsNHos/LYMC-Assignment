@@ -61,7 +61,8 @@ namespace LmycWebSite
             };
 
             // Configure user lockout defaults
-            manager.UserLockoutEnabledByDefault = true;
+            //manager.UserLockoutEnabledByDefault = true;
+            manager.UserLockoutEnabledByDefault = false;
             manager.DefaultAccountLockoutTimeSpan = TimeSpan.FromMinutes(5);
             manager.MaxFailedAccessAttemptsBeforeLockout = 5;
 
@@ -104,6 +105,18 @@ namespace LmycWebSite
         public static ApplicationSignInManager Create(IdentityFactoryOptions<ApplicationSignInManager> options, IOwinContext context)
         {
             return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(), context.Authentication);
+        }
+
+        public override Task<SignInStatus> PasswordSignInAsync(string userName, string password, bool rememberMe, bool shouldLockout)
+        {
+            var user = UserManager.FindByEmailAsync(userName).Result;
+
+            if (user != null && ((user.LockoutEnabled.HasValue && user.LockoutEnabled.Value) || !user.LockoutEnabled.HasValue))
+            {
+                return Task.FromResult<SignInStatus>(SignInStatus.LockedOut);
+            }
+
+            return base.PasswordSignInAsync(userName, password, rememberMe, shouldLockout);
         }
     }
 }

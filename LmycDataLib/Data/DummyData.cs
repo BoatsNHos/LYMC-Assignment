@@ -18,6 +18,7 @@ namespace LmycDataLib.Data
             {
                 new ApplicationUser
                 {
+                    Id = "Id",
                     UserName = "UserName",
                     FirstName = "First",
                     LastName = "Last",
@@ -29,7 +30,8 @@ namespace LmycDataLib.Data
                     SailingExperience = "Beginner",
                     Email = "Email",
                     PhoneNumber = "1234567890",
-                },
+                    LockoutEnabled = false
+                }
             };
 
             return users;
@@ -46,7 +48,7 @@ namespace LmycDataLib.Data
                 Year = "1980",
                 Record = "0-20 has never won a race and never will",
                 CreationDate = DateTime.Parse("2008-11-11"),
-                CreatedBy = "47435e40-4a95-4d74-83ea-202ab99950cd"
+                CreatedBy = "Id"
             };
             
             Boat KnottyBuoy = new Boat()
@@ -58,7 +60,7 @@ namespace LmycDataLib.Data
                 Year = "1990",
                 Record = "10-2 has done well!",
                 CreationDate = DateTime.Parse("1993-08-10"),
-                CreatedBy = "47435e40-4a95-4d74-83ea-202ab99950cd"
+                CreatedBy = "Id"
             };
 
             Boat Flambouyant = new Boat()
@@ -70,7 +72,7 @@ namespace LmycDataLib.Data
                 Year = "2010",
                 Record = "100-0 will win all the races",
                 CreationDate = DateTime.Parse("2016-01-07"),
-                CreatedBy = "47435e40-4a95-4d74-83ea-202ab99950cd"
+                CreatedBy = "Id"
             };
             
             List<Boat> Boats = new List<Boat>() { EggsTaSea, KnottyBuoy, Flambouyant};
