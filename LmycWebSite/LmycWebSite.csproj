@@ -308,6 +308,7 @@
     <Content Include="Views\Boats\Details.cshtml" />
     <Content Include="Views\Boats\Edit.cshtml" />
     <Content Include="Views\Boats\Index.cshtml" />
+    <Content Include="Views\Shared\_UnAuth.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">
