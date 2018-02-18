@@ -40,7 +40,7 @@ namespace LmycDataLib.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("Lymc", throwIfV1Schema: false)
+            : base("Azure", throwIfV1Schema: false)
         {
         }
 
@@ -51,5 +51,4 @@ namespace LmycDataLib.Models
         public DbSet<Boat> Boat { get; set; }
 
     }
-
 }
