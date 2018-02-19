@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
+    var roles = ViewBag.Roles;
 }
 
 <h2>Index</h2>
@@ -103,7 +104,8 @@
                     }
                     else
                     {
-                        @item.Roles.ElementAt(0).RoleId
+                        var memberIndex = roles.IndexOf("member");
+                        @roles[memberIndex]
                     }
                 }
             </td>
