@@ -24,16 +24,15 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("ApplicationUsers", "Index", "ApplicationUsers")</li>
                     @if (User.IsInRole("admin"))
-    {
+                 {
                 <li>@Html.ActionLink("Boats", "Index", "Boats")</li>
                 <li>@Html.ActionLink("ApplicationUsers", "Index", "ApplicationUsers")</li>
-}
-                    @if (User.IsInRole("member"))
-    {
+                }
+                @if (User.IsInRole("member"))
+                {
                 <li>@Html.ActionLink("Boats", "Index", "Boats")</li>
-}
+                }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

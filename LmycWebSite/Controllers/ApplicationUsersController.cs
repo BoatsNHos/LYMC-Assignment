@@ -20,6 +20,11 @@ namespace LmycWebSite.Controllers
         // GET: ApplicationUsers
         public ActionResult Index()
         {
+            var context = new ApplicationDbContext();
+            var roleStore = new RoleStore<IdentityRole>(context);
+            var roleManager = new RoleManager<IdentityRole>(roleStore);
+            var roles = (from r in roleManager.Roles select r.Name).ToList();
+            ViewBag.Roles = roles.ToList();
             return View(db.Users.ToList());
         }
 
