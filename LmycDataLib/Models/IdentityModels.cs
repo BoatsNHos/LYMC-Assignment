@@ -23,10 +23,10 @@ namespace LmycDataLib.Models
 
         public string PostalCode { get; set; }
 
-        override public string PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
 
         public string SailingExperience { get; set; }
-        override public bool LockoutEnabled { get; set; }
+        public bool? LockoutEnabled { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

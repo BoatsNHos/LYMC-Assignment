@@ -111,7 +111,7 @@ namespace LmycWebSite
         {
             var user = UserManager.FindByEmailAsync(userName).Result;
 
-            if (user != null && user.LockoutEnabled)
+            if (user != null && ((user.LockoutEnabled.HasValue && user.LockoutEnabled.Value) || !user.LockoutEnabled.HasValue))
             {
                 return Task.FromResult<SignInStatus>(SignInStatus.LockedOut);
             }
