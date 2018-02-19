@@ -2,7 +2,7 @@
 
 ## Contributors
 
-- Kerry Regan : A00983072 : <kregan10@my.bcit.ca>
+- Kerry Regan : A00983072 : <Kregan89@gmail.com>
 - Bryan Brotonel : A00983072 : <mrbryanbrotonel@gmail.com>
 
 ## Incompletion
